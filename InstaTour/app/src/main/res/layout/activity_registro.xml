@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="ID"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="103dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Correo Electronico"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <Spinner
+        android:id="@+id/tipo_spinner"
+        android:layout_width="219dp"
+        android:layout_height="45dp"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="242dp"
+        android:hint="Tipo"
+        android:layout_below="@+id/editText2"
+        />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRAR"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="391dp" />
+
+
 </android.support.constraint.ConstraintLayout>
