@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import xred.android.juancamilo.instatour.Modelos.Administrador;
+import xred.android.juancamilo.instatour.Modelos.MD5;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Administrador admin = new Administrador();
                 admin.SetBd(v.getContext());
+                
+                MD5 Cifrado = new MD5();
 
-                if (admin.login(identificacion.getText().toString(),Contraseña.getText().toString())){
+                if (admin.login(identificacion.getText().toString(),Cifrado.md5(Contraseña.getText().toString()))){
                     Toast.makeText(v.getContext(),"Hola we :)",Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(v.getContext(),"Lo siento we :(",Toast.LENGTH_SHORT).show();
