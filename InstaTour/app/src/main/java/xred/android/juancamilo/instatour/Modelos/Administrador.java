@@ -34,10 +34,6 @@ public class Administrador {
         Contraseña = pass;
     }
 
-    public Administrador getDataAdmin(){
-        return this;
-    }
-
     public boolean login(String id, String pass){
         boolean log = false;
 
@@ -61,4 +57,6 @@ public class Administrador {
         }
         return log;
     }
+
+
 }
