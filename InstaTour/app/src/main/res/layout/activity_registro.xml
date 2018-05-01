@@ -11,7 +11,7 @@
         layout="@layout/toolbar" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/idUser"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/email"
         android:layout_width="284dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,7 +40,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/idUser" />
 
     <Spinner
         android:id="@+id/tipo_spinner"
@@ -54,10 +54,10 @@
         android:hint="Tipo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/pass"
         android:layout_width="279dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -65,11 +65,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
+        android:hint="@string/contraseña"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/button3"

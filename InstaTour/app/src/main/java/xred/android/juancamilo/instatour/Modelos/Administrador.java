@@ -1,5 +1,6 @@
 package xred.android.juancamilo.instatour.Modelos;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -39,7 +40,7 @@ public class Administrador {
 
         try{
             SQLiteDatabase db = conexion.getReadableDatabase();
-            Cursor cur = db.rawQuery("SELECT * FROM Admin WHERE id = '" + id +"' Contraseña = '" + pass + "'",null);
+            Cursor cur = db.rawQuery("SELECT id,CorreoU , Tipo , Contraseña FROM Admin WHERE CorreoU = '" + id +"' AND Contraseña = '" + pass + "'",null);
 
             if(cur.moveToFirst()){
 
@@ -56,6 +57,15 @@ public class Administrador {
             Log.e(TAG,"CARGA" + e.getMessage());
         }
         return log;
+    }
+
+    public void registro (String id, String email, String password, String tipo){
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        Log.e(TAG,"lOS DATOS SON: " + id + " - " + email+ " - " + password + " - "+ tipo);
+        final String query = "INSERT INTO Admin (id,CorreoU , Tipo , Contraseña ) VALUES ('" + id + "', '" + email+ "', '"+ tipo +"', '"+ password +"' )";
+        db.execSQL(query);
+        db.close();
+
     }
 
 
