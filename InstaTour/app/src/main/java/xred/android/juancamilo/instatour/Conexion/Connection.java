@@ -23,7 +23,7 @@ public class Connection extends SQLiteOpenHelper {
     List<Visita> Visita = null;
     List<xred.android.juancamilo.instatour.Modelos.Api> Api = null;
 
-    String query = "create table Admin (id TEXT PRIMARY KEY,CorreoU TEXT, Tipo TEXT, Contraseña TEXT);";
+    String query = "create table Admin (id TEXT PRIMARY KEY,CorreoU TEXT unique, Tipo TEXT, Contraseña TEXT);";
     String query1 = "create table usuario (CorreoU TEXT PRIMARY KEY, NombreU TEXT, Contraseña TEXT);";
     String query2 = "create table visita (id INTEGER PRIMARY KEY AUTOINCREMENT, CorreoU TEXT, NombreCiu TEXT);";
     String query3 = "create table ciudad (NombreCiu TEXT PRIMARY KEY, Descripcion TEXT, Imagen TEXT);";
@@ -46,7 +46,10 @@ public class Connection extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS usuario");
+        db.execSQL("DROP TABLE IF EXISTS dieta");
+        db.execSQL("DROP TABLE IF EXISTS comida");
+        db.execSQL("DROP TABLE IF EXISTS Favoritos");
     }
 
     public  void borrarBD(){
