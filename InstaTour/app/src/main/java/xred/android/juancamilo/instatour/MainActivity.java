@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText Contraseña;
     Button btnIngresa;
     Button btnRegistro;
-    Toolbar tool;
+
 
 
     @Override
@@ -26,11 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tool =  findViewById(R.id.tool_bar);
 
-        tool.setTitle("InstaTour");
-
-        setSupportActionBar(tool);
 
         identificacion = findViewById(R.id.editCorreo);
         Contraseña = findViewById(R.id.editContraseña);
@@ -46,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 MD5 Cifrado = new MD5();
 
                 if (admin.login(identificacion.getText().toString(),Cifrado.md5(Contraseña.getText().toString()))){
-                    Toast.makeText(v.getContext(),"Hola we :)",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(v.getContext(), Menu.class);
+                    i.putExtra("permiso",admin.getTipo());
+                    startActivity(i);
                 }else {
                     Toast.makeText(v.getContext(),"Lo siento we :(",Toast.LENGTH_SHORT).show();
                 }

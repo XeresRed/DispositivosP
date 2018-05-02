@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".Menu" />
+        <activity android:name=".Lista_usuarios" />
+        <activity android:name=".Registro_usuario"></activity>
     </application>
 
 </manifest>

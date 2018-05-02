@@ -17,7 +17,7 @@ public class Usuario {
     private String Nombre;
     private String Contraseña;
     Connection conexion ;
-    List<Usuario> usuarios = null;
+
     
     
     public Usuario(){
@@ -56,11 +56,11 @@ public class Usuario {
         return Correo;
     }
 
-    public List<Usuario> traeUsuario(){
-
+    public ArrayList<Usuario> traeUsuario(){
+        ArrayList<Usuario> usuarios = null;
         try{
             SQLiteDatabase db = conexion.getReadableDatabase();
-            Cursor cur = db.rawQuery("SELECT *  FROM usuario ",null);
+            Cursor cur = db.rawQuery("SELECT CorreoU, NombreU , Contraseña  FROM usuario ",null);
 
             if(cur.moveToFirst()){
                 usuarios = new ArrayList<>();
@@ -87,4 +87,12 @@ public class Usuario {
         }
         return usuarios;
     }
+
+    public void registro (String email, String password, String Nombre){
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        final String query = "INSERT INTO usuario (CorreoU, NombreU , Contraseña ) VALUES ('" + email + "', '" + Nombre+ "', '"+ password +"')";
+        db.execSQL(query);
+        db.close();
+    }
+
 }
